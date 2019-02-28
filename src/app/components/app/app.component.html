@@ -1,0 +1,16 @@
+<div class="main-menu">
+  <div class="main-menu__item">
+    <div class="main-menu__icon" [matMenuTriggerFor]="appMenu">
+      <img src="../../../assets/img/menu.svg" alt="menu" />
+    </div>
+    <mat-menu #appMenu="matMenu" [hasBackdrop]="true">
+      <button *ngFor="let link of links" (click)="openPage(link)" mat-menu-item>{{ link.title }}</button>
+    </mat-menu>
+  </div>
+  <div (click)="goHome()" class="main-menu__item main-menu__title">
+    {{ title }}
+  </div>
+</div>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

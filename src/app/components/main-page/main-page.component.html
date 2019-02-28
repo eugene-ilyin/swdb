@@ -1,0 +1,9 @@
+<div class="main-page-content">
+  <div class="main-page-content-internal">
+    <div *ngFor="let item of pages" class="main-page-content__item">
+      <div (click)="openPage(item)" class="main-page-content__item-text">
+        {{ item.title | uppercase }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<mat-dialog-content>
+  <p *ngFor="let field of entityInfo">
+    <b>{{ field.title | titlecase }}:</b>
+    {{ field.value }}
+  </p>
+</mat-dialog-content>

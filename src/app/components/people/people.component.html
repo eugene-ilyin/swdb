@@ -1,0 +1,28 @@
+<div class="table-component mat-elevation-z8">
+  <div class="table-component__header">
+    <h3>The list of people</h3>
+    <form class="table-component__form-filters" [formGroup]="filterForm">
+      <mat-form-field>
+        <input matInput placeholder="Search by table" formControlName="search">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+      <mat-form-field class="wide-column-filter">
+        <mat-select placeholder="Gender" formControlName="gender">
+          <mat-option>-Any-</mat-option>
+          <mat-option *ngFor="let gender of genderFilterValues" [value]="gender">{{ gender }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <mat-progress-bar *ngIf="isTableLoading" mode="indeterminate"></mat-progress-bar>
+  <!--@todo I use ngIf because of bug https://github.com/angular/material2/issues/9105, it allows to re-init the table and avoid the bug.-->
+  <app-common-table *ngIf="!isTableLoading"
+                    [dataSource]="dataSource"
+                    [tableConfig]="tableConfig"
+                    [tableColumns]="tableColumns"
+                    [resultsCount]="resultsCount"
+                    [pageNumber]="pageNumber">
+  </app-common-table>
+</div>
