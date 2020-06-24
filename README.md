@@ -1,6 +1,6 @@
 # Starwars database
 
-Simple project to get some practice with an Angular 7.
+Simple project to get some practice with an Angular 7 after a long work with Angular 1-4.
 
 ## Used tools
 
